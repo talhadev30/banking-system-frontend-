@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: SpaceGrotesk;
+  src: url(../public//SpaceGrotesk-Bold.ttf);
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+
+.gradient-hero {
+  background-image: radial-gradient(1200px 600px at 20% -10%, #1e0f528c, transparent), radial-gradient(900px 500px at 100% 10%, #9a32fc4d, transparent)
+}
+
+.credit-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(
+    90deg,
+    #925cf6 0%,
+    #a163f1 50%,
+    #7e46e5 100%
+  );
+  box-shadow: 0 25px 60px rgba(99, 102, 241, 0.35);
+}
+
+.btn-color {
+  background-image: linear-gradient(135deg,
+      #3b0764 0%,
+      #6d28d9 40%,
+      #8b5cf6 70%,
+      #c084fc 100%);
+}
+.dark{
+  background: #181A1B;
+  color: #fff;
+}
+
+.btn {
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  outline: none;
+  font-weight: 500;
+  border: none;
+}
+
+.btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}

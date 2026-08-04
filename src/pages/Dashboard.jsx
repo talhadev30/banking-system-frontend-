@@ -7,7 +7,6 @@ import Linechart from '../component/Dashboard/Linechart'
 import Resenttransaction from '../component/Dashboard/Resenttransaction'
 import axios from "../utils/axiosInstance";
 import { toast, ToastContainer, Zoom } from 'react-toastify'
-import Logout from '../component/logout'
 
 const Dashboard = () => {
 

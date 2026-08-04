@@ -2,7 +2,8 @@ import React from 'react'
 import Togglebutton from './Togglebutton'
 import { Send } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import Logout from '../logout'
+import Logout from '../Logout'
+
 
 
 

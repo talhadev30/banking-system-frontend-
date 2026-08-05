@@ -70,6 +70,8 @@ const Transactionform = ({ account }) => {
           { withCredentials: true }
         );
 
+         setPopup({ open: true, data: res.data })
+
         setAmount("");
         setToAccount("");
 

@@ -19,71 +19,60 @@ const Transactionform = ({ account }) => {
 
   async function handleAmountChange(e) {
     e.preventDefault();
-    setToAccounterr("");
+
     setAmounterr("");
+    setToAccounterr("");
 
-
-
-    if (toAccount === "") {
+    if (!toAccount) {
       setToAccounterr("Recipient account is required");
     }
 
-    if (amount === "") {
+    if (!amount) {
       setAmounterr("Amount is required");
     }
 
-    if (toAccount === "" || amount === "") {
-      return;
-    }
+    if (!toAccount || !amount) return;
 
     setLoading(true);
-    // manage a systemUser and a normal user api
-    if (user.systemUser) {
-      try {
-        const res = await axios.post(`${import.meta.env.VITE_TRANSACTION_INITIAL_FUND_URL}`,
-          {
-            toAccount: toAccount,
-            amount: Number(amount),
-            idempotencyKey: crypto.randomUUID()
-          },
-          { withCredentials: true }
-        );
 
-        setPopup({ open: true, data: res.data })
+    try {
+      const url = user.systemUser
+        ? import.meta.env.VITE_TRANSACTION_INITIAL_FUND_URL
+        : import.meta.env.VITE_TRANSACTION_URL;
 
-        setAmount("");
-        setToAccount("");
+      const res = await axios.post(
+        url,
+        {
+          toAccount,
+          amount: Number(amount),
+          idempotencyKey: crypto.randomUUID(),
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
-      } catch (error) {
-        toast.error(error.response.data.message)
-      } finally {
-        setLoading(false)
+      if (user.systemUser) {
+        setPopup({
+          open: true,
+          data: res.data,
+        });
+      } else {
+        toast.success("Transaction completed successfully");
       }
-    } else {
-      try {
-        const res = await axios.post(`${import.meta.env.VITE_TRANSACTION_URL}`,
-          {
-            toAccount: toAccount,
-            amount: Number(amount),
-            idempotencyKey: crypto.randomUUID()
-          },
-          { withCredentials: true }
-        );
 
-        setAmount("");
-        setToAccount("");
-
-      } catch (error) {
-        toast.error(
-          error.response?.data?.message || error.message || "Something went wrong"
-        )
-      } finally {
-        setLoading(false)
-      }
+      setAmount("");
+      setToAccount("");
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+        error.message ||
+        "Something went wrong"
+      );
+    } finally {
+      setLoading(false);
     }
-
-
-  };
+  }
 
   return (
     <div className='max-w-7xl h-full flex flex-col items-start justify-start gap-4 md:gap-10  p-5 md:px-10 py-5 font-[SpaceGrotesk]'>
@@ -143,7 +132,7 @@ const Transactionform = ({ account }) => {
       />
 
       {loading && <Loding />}
-      
+
     </div>
   )
 }

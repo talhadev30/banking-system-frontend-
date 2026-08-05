@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Loading = () => {
+const Loding = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
       <div className="flex gap-x-2">
@@ -16,4 +16,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default Loding;

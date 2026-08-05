@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import GoogleButton from '../component/Google/Googlebutton'
 import { Eye, EyeClosed } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -117,7 +116,6 @@ const CreateAccount = () => {
             </div>
             <div className='flex items-center justify-center gap-3 mt-6 flex-col'>
               <button className="btn-color mb-2 btn text-white px-3 py-2 rounded-3xl text-[15px] w-full">Create Account</button>
-              <GoogleButton method={"Continue with Google"} />
               <span className='text-center text-sm'>Have an account? <Link to={'/signin'} className='text-violet-500 text-[15px] font-bold'>Signin</Link></span>
             </div>
           </form>

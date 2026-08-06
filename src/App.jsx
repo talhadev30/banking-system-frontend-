@@ -12,7 +12,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 const App = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen overflow-x-hidden'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<CreateAccount />} />

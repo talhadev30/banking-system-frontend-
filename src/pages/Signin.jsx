@@ -83,7 +83,7 @@ const Signin = () => {
       <div className="min-h-screen flex items-center justify-center flex-col gap-10 px-4">
         <Logo />
         {/* registrationcard  start */}
-        <div className="bg-[#101828c5] border-white/25 border backdrop-blur-3xl p-7 w-110  rounded-4xl shadow-xl">
+        <div className="bg-[#101828c5] border-white/25 border backdrop-blur-3xl p-7 w-100  rounded-4xl shadow-xl">
           <div className='flex items-start justify-center flex-col gap-1.5 text-white'>
             <h1 className='text-2xl font-medium font-[SpaceGrotesk]'>Sign in to your account</h1>
             <p className='text-gray-300 text-[15px]'>Welcome back! Please enter your details</p>

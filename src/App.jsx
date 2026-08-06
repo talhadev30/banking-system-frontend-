@@ -5,7 +5,6 @@ import CreateAccount from './pages/CreateAccount'
 import Signin from './pages/Signin'
 import Dashboard from './pages/Dashboard'
 import Transaction from './pages/Transaction'
-import { GoogleLogin } from '@react-oauth/google'
 import Signinform from './pages/Signin'
 import ProtectedRoute from "./ProtectedRoute";
 
